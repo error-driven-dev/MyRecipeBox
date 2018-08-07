@@ -5,7 +5,13 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css',
   '../../node_modules/bootstrap/dist/css/bootstrap.min.css' ]
+  
 })
 export class AppComponent {
   title = 'my-recipes';
+  currentFeature = 'recipe';
+  
+  onNavTo({navTo}){
+    this.currentFeature = navTo;
+  }
 }

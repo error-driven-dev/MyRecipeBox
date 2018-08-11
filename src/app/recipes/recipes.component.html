@@ -1,8 +1,16 @@
 <div class="row">
     <div class="col-md-5">
-        <app-recipes-list></app-recipes-list>
+        
+        <!--CAN SET THE PROPERTY DIRECTLY OR THROUGH A METHOD IN THIS CLASS-->
+        <!--<app-recipes-list (detailedRecipeReq)="selectedRecipe = $event"></app-recipes-list>-->
+        <app-recipes-list ></app-recipes-list>
     </div>
     <div class="col-md-7">
-        <app-recipe-detail></app-recipe-detail>
+        <app-recipe-detail  *ngIf="selectedRecipe; else infoText" ></app-recipe-detail>
+        <ng-template #infoText>
+           <p>Please select Recipe!</p>
+        </ng-template>
     </div>
 </div>
+
+

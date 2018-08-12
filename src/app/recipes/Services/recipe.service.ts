@@ -8,7 +8,8 @@ export class RecipeService {
   'A wonderful winter-time comfort food...',
   'https://www.buffalowildwings.com/globalassets/menuitems/10120003-chicken-quesadilla.png')
     ]; 
-    @Output() selectedRecipe: Recipe = new EventEmitter<Recipe>();
+    
+    @Output() selectedRecipe = new EventEmitter<Recipe>();
     
     getRecipes() {
         return this.recipes.slice();

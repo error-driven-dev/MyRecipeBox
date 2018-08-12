@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import { ShoppingListService } from './shopping-list/Services/shopping-list.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css',
-  '../../node_modules/bootstrap/dist/css/bootstrap.min.css' ]
+  styleUrls: ['./app.component.css'
+  ],
+  providers: [ShoppingListService]
   
 })
 export class AppComponent {

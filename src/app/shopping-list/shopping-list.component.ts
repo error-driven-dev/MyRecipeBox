@@ -16,7 +16,7 @@ ingredients: Ingredient[];
   ngOnInit() {
 
     this.ingredients = this.listService.getIngredients();
-    this.listService.IngredientAdded.subscribe((ingredients: Ingredient[]) => { this.ingredients = ingredients; });
+    this.listService.ingredientsChanged.subscribe((ingredients: Ingredient[]) => { this.ingredients = ingredients; });
   }
   
 

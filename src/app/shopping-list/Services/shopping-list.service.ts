@@ -3,11 +3,11 @@ import { Output, EventEmitter } from '@angular/core';
 
 
 export class ShoppingListService{
-    ingredients: Ingredient[] = [
-        new Ingredient('beef', 1),
-        new Ingredient('carrots', 5),
+    private ingredients: Ingredient[] = [
+        new Ingredient('almond milk', 2, ''),
+        new Ingredient('half-half', 2),
         ];
-    @Output() IngredientAdded = new EventEmitter<Ingredient[]>();
+    @Output() ingredientsChanged = new EventEmitter<Ingredient[]>();
 
     getIngredients() {
         return this.ingredients.slice();
@@ -15,8 +15,16 @@ export class ShoppingListService{
 
     addIngredient(ingredient: Ingredient) {
         this.ingredients.push(ingredient);
-        this.IngredientAdded.emit(this.ingredients.slice());
+        this.ingredientsChanged.emit(this.ingredients.slice());
            
-        
+         }
+    addShopList(shopList: Ingredient[]) {
+        this.ingredients.push(...shopList);
+        this.ingredientsChanged.emit(this.ingredients.slice());
+    }
+    deleteIngredient() {}
+
+    clearList() {
+        this.ingredients = [];
     }
 }

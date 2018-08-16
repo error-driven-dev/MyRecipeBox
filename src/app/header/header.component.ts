@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,17 +6,16 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
- @Output() selectedFeature = new EventEmitter<{navTo:string}>(); 
+//  @Output() selectedFeature = new EventEmitter<{navTo:string}>(); 
  
 
   constructor() { }
 
   ngOnInit() {
   }
-
-onSelect(feature: string) {
+//old way of selecting feature
+// onSelect(feature: string) {
   
-  console.log(feature);
-  this.selectedFeature.emit({navTo: feature})
-}
+//   this.selectedFeature.emit({navTo: feature})
+// }
 }

@@ -5,7 +5,7 @@
     <hr>
   
 
-        <app-recipe-item *ngFor="let item of recipes" [recipe] ="item"
+        <app-recipe-item *ngFor="let item of recipes; let i = index" [recipe] ="item" [index] = i
         ></app-recipe-item>
   
 

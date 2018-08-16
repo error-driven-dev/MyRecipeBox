@@ -27,7 +27,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     RecipeDetailComponent,
     RecipeItemComponent,
     ShoppingListComponent,
-    ShoppingEditComponent, 
+    ShoppingEditComponent,
     DropdownDirective, RecipeLandingComponent, RecipeEditComponent
   ],
   imports: [

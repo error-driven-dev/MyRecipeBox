@@ -12,9 +12,7 @@ export class RecipeService {
     new Ingredient('carrots', 5, 'whole'),
     ])
     ]; 
-  
-    @Output() selectedRecipe = new EventEmitter<Recipe>();
-    
+
     getRecipes() {
         return this.recipes.slice();
     }

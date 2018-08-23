@@ -1,7 +1,7 @@
 
 <div class="row">
   <div class="col-xs-12">
-    <form [formGroup]="recipeForm">
+    <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
        <div class="row">
          <div class="col-xs-12">
            <button type="submit" class="btn btn-success">Save</button>
@@ -19,7 +19,7 @@
        <div class="row">
          <div class="col-xs-12">
            <label for="imagePath">Image URL:</label>
-           <input type="text" formcontrolName="imagePath" id="imagePath" class="form-control">
+           <input type="url" formControlName="imagePath" id="imagePath" class="form-control">
           </div>
        </div>
        <div class="row">
@@ -30,18 +30,24 @@
             </div>
           </div>
         </div>
-        <div class="row">
-            <div class="col-xs-12">
-              <div class="row">
-                <div class="col-xs-8">
-                  <input class="form-control" type="text">
+        <button class="btn btn-default " type="button" (click)="onAddIngredient()">Add Ingredient</button>
+        <p></p>
+        <div class="row form-group" formArrayName="ingredients" *ngFor="let item of recipeForm.get('ingredients').controls; let i = index">
+            <div class="col-xs-12  ">
+              <div class="row" [formGroupName]="i" >
+                <div class="col-xs-6">
+                  <input placeholder="ingredient" formControlName="ingName" class="form-control" type="text">
 
                 </div>
                 <div class="col-xs-2">
-                  <input type="number" class="form-control">
+                  <input placeholder="lb, tsp, lb..." formControlName="ingMeasure" class="form-control" type="text">
+
                 </div>
                 <div class="col-xs-2">
-                  <button class="btn btn-default">X</button>
+                  <input formControlName="ingAmount"type="number" placeholder="amount" class="form-control">
+                </div>
+                <div class="col-xs-2">
+                  <button type="button" (click)="onDeleteIngredient(i)" class="btn btn-default">X</button>
                 </div>
               </div>
               

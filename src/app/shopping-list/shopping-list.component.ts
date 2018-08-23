@@ -19,5 +19,10 @@ ingredients: Ingredient[];
     this.listService.ingredientsChanged.subscribe((ingredients: Ingredient[]) => { this.ingredients = ingredients; });
   }
   
+  // sends the index of selected item to the service
+  onEdit(i: number) {
+    this.listService.shoplistEditor.next(i);
+
+  }
 
 }

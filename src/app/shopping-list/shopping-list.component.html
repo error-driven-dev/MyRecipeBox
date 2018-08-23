@@ -4,8 +4,11 @@
         <hr>
         <h3>Shopping List</h3>
         <ul class="list-group">
-            <a class="list-group-item" style="cursor:pointer" *ngFor="let item of ingredients">
+            <a class="list-group-item" style="cursor:pointer" 
+            (click)="onEdit(i)"
+            *ngFor="let item of ingredients; let i=index">
                 {{item.amount}} {{item.measure}} - {{item.name}}
+
             </a>
         </ul>
     </div>
